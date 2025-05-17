@@ -7,28 +7,21 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4f46e5, #9333ea);
       color: white;
-      background: linear-gradient(135deg, #4f46e5, #9333ea);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
+      padding: 40px 20px;
     }
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      background: white;
-      border-radius: 50%;
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    img.logo {
+      width: 120px;
+      height: auto;
       margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      font-weight: bold;
-      color: #4f46e5;
     }
 
     h1 {
@@ -36,22 +29,20 @@
       margin: 0;
     }
 
-    p {
+    p.subtitle {
       font-size: 1.2em;
       margin: 10px 0 30px 0;
-      max-width: 600px;
     }
 
     .services {
       background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 400px;
-      margin-bottom: 30px;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0;
     }
 
     .services h2 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .services ul {
@@ -61,16 +52,19 @@
 
     .services li {
       margin: 10px 0;
+      font-size: 1.1em;
     }
 
     a.button {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 24px;
       background: white;
       color: #4f46e5;
-      border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: background 0.3s ease;
     }
 
     a.button:hover {
@@ -80,22 +74,23 @@
 </head>
 <body>
 
-  <div class="logo">B</div>
+  <div class="container">
+    <img src="logo.png" alt="BLENXO Logo" class="logo">
+    <h1>BLENXO</h1>
+    <p class="subtitle">Creative Digital Solutions — Powered by Design, Marketing & AI</p>
 
-  <h1>BLENXO</h1>
-  <p>We help businesses grow with stunning logos, modern websites, smart Instagram marketing, and AI automation tools.</p>
+    <div class="services">
+      <h2>What We Do</h2>
+      <ul>
+        <li>🎨 Custom Logo Design</li>
+        <li>🌐 Modern Website Creation</li>
+        <li>📲 Instagram Marketing & Growth</li>
+        <li>🤖 AI Tools Integration & Automation</li>
+      </ul>
+    </div>
 
-  <div class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>✓ Logo Design</li>
-      <li>✓ Website Creation</li>
-      <li>✓ Instagram Marketing</li>
-      <li>✓ AI Tools Setup</li>
-    </ul>
+    <a href="https://instagram.com/blenxo_official" class="button" target="_blank">📸 Visit us on Instagram</a>
   </div>
-
-  <a class="button" href="https://www.instagram.com/blenxo_official" target="_blank">📸 Follow us on Instagram</a>
 
 </body>
 </html>
