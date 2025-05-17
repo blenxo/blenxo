@@ -1,0 +1,54 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  height: 100%;
+}
+
+.hero {
+  background: url('space.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.buttons .btn {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #6e00ff, #00c8ff);
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.buttons .btn:hover {
+  background: linear-gradient(135deg, #5a00cc, #00aacc);
+}
