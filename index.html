@@ -296,6 +296,11 @@
       border-right: 0;
       border-radius: 0;
     }
+    .brand-logo {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
 
     .nav-links {
       display: flex;
@@ -511,97 +516,159 @@
       opacity: 0.55;
     }
 
-    .orbit {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 999px;
-      transform: translate(-50%, -50%);
-    }
+   .orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
 
-    .orbit.one {
-      width: 290px;
-      height: 290px;
-      animation: spin 18s linear infinite;
-    }
+.orbit.one {
+  width: 290px;
+  height: 290px;
+  animation: spin 18s linear infinite;
+}
 
-    .orbit.two {
-      width: 380px;
-      height: 380px;
-      animation: spinReverse 24s linear infinite;
-    }
+.orbit.two {
+  width: 380px;
+  height: 380px;
+  animation: spinReverse 24s linear infinite;
+}
 
-    .orbit.three {
-      width: 214px;
-      height: 214px;
-      animation: pulseOrbit 5s ease-in-out infinite;
-    }
+.orbit.three {
+  width: 214px;
+  height: 214px;
+  animation: spin 12s linear infinite;
+}
 
-    .node {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #fff, #93c5fd);
-      box-shadow: 0 0 24px rgba(96,165,250,0.8);
-    }
+/* New orbit 4 */
+.orbit.four {
+  width: 450px;
+  height: 450px;
+  animation: spinReverse 32s linear infinite;
+  border-color: rgba(96,165,250,0.13);
+}
 
-    .node.one {
-      top: -7px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+/* New orbit 5 */
+.orbit.five {
+  width: 135px;
+  height: 135px;
+  animation: spin 9s linear infinite;
+  border-color: rgba(255,255,255,0.18);
+}
 
-    .node.two {
-      right: -7px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+.node {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #93c5fd);
+  box-shadow:
+    0 0 14px rgba(255,255,255,0.85),
+    0 0 28px rgba(96,165,250,0.9);
+}
 
-    .node.three {
-      bottom: -7px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.node.one {
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    .core {
-      position: absolute;
-      inset: 50%;
-      width: 170px;
-      height: 170px;
-      transform: translate(-50%, -50%);
-      display: grid;
-      place-items: center;
-      border-radius: 32px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.045)),
-        rgba(10, 15, 24, 0.6);
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.15),
-        0 20px 50px rgba(0,0,0,0.42);
-    }
+.node.two {
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-    .core-text {
-      text-align: center;
-    }
+.node.three {
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    .core-text strong {
-      display: block;
-      font-size: 1.3rem;
-      letter-spacing: 0.24em;
-      margin-left: 0.24em;
-    }
+.node.four {
+  left: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-    .core-text span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
+.node.five {
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Center logo area — no visible square box */
+.core {
+  position: absolute;
+  inset: 50%;
+  width: 175px;
+  height: 175px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  isolation: isolate;
+  z-index: 3;
+}
+
+/* Bright glow behind logo */
+.core::before {
+  content: "";
+  position: absolute;
+  inset: -52px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.55) 0%, transparent 16%),
+    radial-gradient(circle, rgba(96,165,250,0.72) 0%, transparent 48%),
+    radial-gradient(circle, rgba(59,130,246,0.42) 0%, transparent 72%);
+  filter: blur(24px);
+  opacity: 0.95;
+  z-index: -2;
+  animation: logoGlow 3.8s ease-in-out infinite;
+}
+
+/* Soft halo ring */
+.core::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 65%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.core-logo {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,0.75))
+    drop-shadow(0 0 26px rgba(96,165,250,0.9))
+    drop-shadow(0 0 52px rgba(59,130,246,0.65));
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
 
     .floating-panel {
       position: absolute;
@@ -1383,7 +1450,7 @@
     <div class="container nav-inner">
       <a href="#home" class="brand" aria-label="BLENXO home">
       <img src="blenxo_logo.png" alt="BLENXO logo" class="brand-logo" /> 
-      <span>BLENXO</span>
+      <!--<span>BLENXO</span>-->
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
@@ -1462,12 +1529,16 @@
             <div class="orbit three">
               <span class="node three"></span>
             </div>
+            <div class="orbit four">
+              <span class="node four"></span>
+            </div>
+
+          <div class="orbit five">
+              <span class="node five"></span>
+            </div>
 
             <div class="core">
-              <div class="core-text">
-                <strong>BLENXO</strong>
-                <span>Digital Core</span>
-              </div>
+              <img src="blenxo_logo.png" alt="BLENXO logo" class="core-logo" />
             </div>
 
             <div class="floating-panel top">
@@ -1701,8 +1772,8 @@
 
             <div class="contact-links">
               <a class="contact-link" id="emailLink" href="#">
-                <span>Email</span>
-                <span id="emailText">your-email@example.com</span>
+                <span>Gmail</span>
+                <span id="emailText">blenxo.group@gmail.com</span>
               </a>
 
               <a class="contact-link" id="githubLink" href="#" target="_blank" rel="noreferrer">
@@ -1754,7 +1825,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
        <a href="#home" class="brand">
-  <img src="images/blenxo-logo.png" alt="BLENXO logo" class="brand-logo" />
+  <img src="blenxo_logo.png" alt="BLENXO logo" class="brand-logo" />
   <span>BLENXO</span>
 </a>
         <p>Built with curiosity, discipline, and code.</p>
@@ -1763,7 +1834,7 @@
       <div class="footer-right">
         <div class="socials">
           <a id="footerGithub" href="#" target="_blank" rel="noreferrer">GitHub</a>
-          <a id="footerEmail" href="#">Email</a>
+          <a id="footerEmail" href="#">Gmail</a>
         </div>
 
         <p class="copyright">
@@ -1778,9 +1849,9 @@
        EDIT THESE VALUES FIRST
     ========================================================== */
     const CONFIG = {
-      email: "your-email@example.com",
-      githubUrl: "https://github.com/yourusername",
-      githubLabel: "github.com/yourusername",
+      email: "blenxo.group@gmail.com",
+      githubUrl: "https://github.com/blenxo",
+      githubLabel: "github.com/blenxo",
 
       projects: [
         {
@@ -1788,8 +1859,8 @@
           description:
             "A structured learning dashboard that helps track progress across AI and machine learning skills.",
           stack: ["HTML", "CSS", "JavaScript", "Supabase"],
-          liveDemo: "#",
-          github: "#",
+          liveDemo: "https://blenxo.github.io/roadmap",
+          github: "https://github.com/blenxo/roadmap",
           featured: true
         },
         {
@@ -1797,32 +1868,32 @@
           description:
             "A personal command center for goals, routines, progress tracking, and life organization.",
           stack: ["HTML", "CSS", "JavaScript"],
-          liveDemo: "#",
-          github: "#"
+          liveDemo: "https://blenxo.github.io/roadmap",
+          github: "https://github.com/blenxo/roadmap"
         },
         {
           name: "Pomodoro Focus Timer",
           description:
             "A clean productivity timer designed to support deep work, breaks, and consistent study sessions.",
           stack: ["HTML", "CSS", "JavaScript"],
-          liveDemo: "#",
-          github: "#"
+          liveDemo: "https://blenxo.github.io/pomodoro",
+          github: "https://github.com/blenxo/pomodoro"
         },
         {
           name: "Portfolio Website",
           description:
             "A personal portfolio space for showcasing skills, projects, and long-term growth.",
           stack: ["HTML", "CSS", "JavaScript"],
-          liveDemo: "#",
-          github: "#"
+          liveDemo: "https://blenxo.github.io/aswin",
+          github: "https://github.com/blenxo/aswin"
         },
         {
           name: "More Projects Coming Soon",
           description:
             "New experiments, tools, and digital products will continue to be added as BLENXO grows.",
           stack: ["In Progress"],
-          liveDemo: "",
-          github: "",
+          liveDemo: "https://blenxo.github.io/log",
+          github: "https://github.com/blenxo/log",
           comingSoon: true
         }
       ]
@@ -1879,14 +1950,20 @@
     const footerGithub = document.getElementById("footerGithub");
     const footerEmail = document.getElementById("footerEmail");
 
-    emailLink.href = `mailto:${CONFIG.email}`;
-    emailText.textContent = CONFIG.email;
+    const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONFIG.email)}`;
 
-    githubLink.href = CONFIG.githubUrl;
-    githubText.textContent = CONFIG.githubLabel;
+emailLink.href = gmailComposeUrl;
+emailLink.target = "_blank";
+emailLink.rel = "noopener noreferrer";
+emailText.textContent = CONFIG.email;
 
-    footerGithub.href = CONFIG.githubUrl;
-    footerEmail.href = `mailto:${CONFIG.email}`;
+githubLink.href = CONFIG.githubUrl;
+githubText.textContent = CONFIG.githubLabel;
+
+footerGithub.href = CONFIG.githubUrl;
+footerEmail.href = gmailComposeUrl;
+footerEmail.target = "_blank";
+footerEmail.rel = "noopener noreferrer";
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -1907,7 +1984,9 @@
         `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
       );
 
-      window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
+const gmailFormUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONFIG.email)}&su=${subject}&body=${body}`;
+
+window.open(gmailFormUrl, "_blank", "noopener,noreferrer");
     });
 
     /* =========================
