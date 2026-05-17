@@ -1628,8 +1628,8 @@
     description:
       "A warm and attractive website demo for bakeries, cafés, small hotels, and food businesses with menu sections, offers, gallery, and quick contact.",
     stack: ["Menu Showcase", "Gallery", "Offers Section", "Contact CTA"],
-    image: "project-images/bakery-demo.png",
-    liveDemo: "https://blenxo.github.io/bakery-demo/",
+    image: "project-images/bakery1.jpg",
+    liveDemo: "https://blenxo.github.io/bakerydemo/",
     github: "#",
     featured: true
   },
@@ -1638,8 +1638,8 @@
     description:
       "A modern grocery and supermarket website demo with product categories, offers, delivery information, store details, and WhatsApp enquiry option.",
     stack: ["Product Categories", "Store Info", "Offers", "WhatsApp Order"],
-    image: "project-images/supermarket-demo.png",
-    liveDemo: "https://blenxo.github.io/supermarket-demo/",
+    image: "project-images/supermarket.jfif",
+    liveDemo: "https://blenxo.github.io/supermarket_demo/",
     github: "#"
   },
   {
@@ -1648,7 +1648,7 @@
       "A colorful, clean, and friendly website demo for stationery shops selling school supplies, notebooks, pens, bags, toys, gifts, and fancy items.",
     stack: ["Responsive Design", "Product Categories", "WhatsApp Contact", "Mobile Friendly"],
     image: "project-images/stationery-demo.png",
-    liveDemo: "https://blenxo.github.io/stationery-demo/",
+    liveDemo: "https://blenxo.github.io/stationary_demo/",
     github: "#"
   },
   {
@@ -1656,8 +1656,8 @@
     description:
       "A premium portfolio website demo for students, creators, freelancers, and professionals who want to showcase skills, projects, and personal brand.",
     stack: ["Portfolio", "About Section", "Projects", "Contact Form"],
-    image: "project-images/portfolio-demo.png",
-    liveDemo: "https://blenxo.github.io/portfolio-demo/",
+    image: "project-images/portfolio.jpg",
+    liveDemo: "https://blenxo.github.io/aswin/",
     github: "#",
   },
 ],
@@ -1671,8 +1671,23 @@
         card.className = `project-card glass reveal ${project.featured ? "featured" : ""}`;
         const tags = project.stack.map((item) => `<span class="tag">${item}</span>`).join("");
         const actions = ` <div class="project-actions"> <a href="${project.liveDemo}" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">View Demo</a> <a href="#contact" class="btn btn-secondary btn-small">Get Similar Website</a> </div> `;
-        card.innerHTML = ` <div> <div class="project-kicker"> ${project.featured ? "Featured Demo" : "Website Demo"} </div> <h3>${project.name}</h3> <p>${project.description}</p> <div class="tags">${tags}</div> ${actions} </div> `;
-        return card;
+card.innerHTML = `
+  <div>
+    <div class="project-image">
+      <img src="${project.image}" alt="${project.name} preview" loading="lazy" />
+    </div>
+
+    <div class="project-kicker">
+      ${project.featured ? "Featured Demo" : "Website Demo"}
+    </div>
+
+    <h3>${project.name}</h3>
+    <p>${project.description}</p>
+
+    <div class="tags">${tags}</div>
+    ${actions}
+  </div>
+`;        return card;
       }
       CONFIG.projects.forEach((project) => {
         projectsGrid.appendChild(createProjectCard(project));
