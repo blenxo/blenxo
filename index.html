@@ -697,6 +697,30 @@
       /* =========================
    PROJECTS
 ========================== */
+      .project-image {
+  width: 100%;
+  height: 210px;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+}
+
+.project-card.featured .project-image {
+  height: 260px;
+}
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -1598,12 +1622,13 @@
         email: "blenxo.group@gmail.com",
         githubUrl: "https://github.com/blenxo",
         githubLabel: "github.com/blenxo",
-       projects: [
+      projects: [
   {
     name: "Bakery, Café & Hotel Website",
     description:
       "A warm and attractive website demo for bakeries, cafés, small hotels, and food businesses with menu sections, offers, gallery, and quick contact.",
     stack: ["Menu Showcase", "Gallery", "Offers Section", "Contact CTA"],
+    image: "project-images/bakery-demo.png",
     liveDemo: "https://blenxo.github.io/bakery-demo/",
     github: "#",
     featured: true
@@ -1613,6 +1638,7 @@
     description:
       "A modern grocery and supermarket website demo with product categories, offers, delivery information, store details, and WhatsApp enquiry option.",
     stack: ["Product Categories", "Store Info", "Offers", "WhatsApp Order"],
+    image: "project-images/supermarket-demo.png",
     liveDemo: "https://blenxo.github.io/supermarket-demo/",
     github: "#"
   },
@@ -1621,6 +1647,7 @@
     description:
       "A colorful, clean, and friendly website demo for stationery shops selling school supplies, notebooks, pens, bags, toys, gifts, and fancy items.",
     stack: ["Responsive Design", "Product Categories", "WhatsApp Contact", "Mobile Friendly"],
+    image: "project-images/stationery-demo.png",
     liveDemo: "https://blenxo.github.io/stationery-demo/",
     github: "#"
   },
@@ -1629,6 +1656,7 @@
     description:
       "A premium portfolio website demo for students, creators, freelancers, and professionals who want to showcase skills, projects, and personal brand.",
     stack: ["Portfolio", "About Section", "Projects", "Contact Form"],
+    image: "project-images/portfolio-demo.png",
     liveDemo: "https://blenxo.github.io/portfolio-demo/",
     github: "#",
   },
