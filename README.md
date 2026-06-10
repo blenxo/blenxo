@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Header Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=ASWIN%20S&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=AI%20%26%20ML%20Engineer%20%7C%20Hardware%20%2B%20Intelligence&descAlignY=58&descSize=18&animation=fadeIn"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=ASWIN%20S&animation=twinkling"/>
 
 <!-- Typing animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&multiline=false&width=600&lines=Hardware+Engineer+turned+AI+Developer+%F0%9F%A4%96;Building+at+the+edge+of+silicon+%26+intelligence+%E2%9A%A1;B.Tech+AI+%26+ML+%7C+Rajadhani+Institute+%F0%9F%8E%93;From+Circuits+to+Code+%7C+Palakkad%2C+Kerala+%F0%9F%8C%BF)](https://git.io/typing-svg)
